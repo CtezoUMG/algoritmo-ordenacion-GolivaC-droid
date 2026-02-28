@@ -10,6 +10,7 @@ public class Algoritmo
         return Enumerable.Range(0, n).Select(_ => r.Next(0, 50000)).ToArray();
     }
 
+
     public bool EstaOrdenado(int[] arr)
     {
         if (arr == null || arr.Length == 0) return true;
@@ -24,7 +25,22 @@ public class Algoritmo
 
     public void BubbleSort(int[] arr)
     {
-        // TODO: Implementar el algoritmo de Bubble Sort tradicional
+        // Implementación tradicional de Bubble Sort en 
+        if (arr == null || arr.Length <= 1) return;
 
+        int n = arr.Length;
+        for (int i = 0; i < n - 1; i++)
+        {
+            for (int j = 0; j < n - i - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    // Intercambio (Swap)
+                    int temporal = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temporal;
+                }
+            }
+        }
     }
 }
